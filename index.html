@@ -229,33 +229,8 @@ document.body.appendChild(fw);
 setTimeout(()=>{
 fw.remove();
 },2000);
-
-}function launchFireworks(){
-
-for(let i=0;i<30;i++){
-
-let fw=document.createElement("div");
-
-fw.className="firework";
-
-fw.innerHTML="🎆";
-
-fw.style.position="absolute";
-
-fw.style.left=Math.random()*100+"vw";
-
-fw.style.top=Math.random()*100+"vh";
-
-fw.style.fontSize="35px";
-
-document.body.appendChild(fw);
-
-setTimeout(()=>{
-fw.remove();
-},2000);
-
 }
-
+    
 }
  
   function createHeart(){
