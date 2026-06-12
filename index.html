@@ -94,6 +94,23 @@ transform:scale(3);
 }
 
 }
+    .letter{
+background:#fffaf5;
+color:#333;
+padding:30px;
+border-radius:20px;
+max-width:700px;
+margin:auto;
+box-shadow:0 0 20px rgba(0,0,0,0.2);
+text-align:left;
+font-family:cursive;
+}
+
+#typedText{
+font-size:24px;
+line-height:1.8;
+white-space:pre-line;
+}
 </style>
 </head>
 
@@ -160,20 +177,13 @@ Forever Yours, Ankit 🫀
 </div>
 <div class="page" id="page6">
 
-<h1>❤️ Forever Together ❤️</h1>
+<div class="letter">
 
-<p>
-❤️ Shivani ❤️
-<br><br>
-Thank you for being in my life.
-<br><br>
-I promise to love you,
-respect you and stand beside you.
-<br><br>
-Forever Together ❤️
-<br><br>
-- Ankit ❤️
-</p>
+<h2>💌 Dear Shivani,</h2>
+
+<p id="typedText"></p>
+
+</div>
 
 </div>
 <script>
@@ -186,19 +196,19 @@ document.getElementById('page'+num).classList.add('active');
 }
 function yesAnswer() {
 
-    document.getElementById("bgmusic").pause();
+document.getElementById("bgmusic").pause();
 
-    let newMusic = new Audio("theglowyglitter-20260612-0001.mp3");
+let newMusic = new Audio("theglowyglitter-20260612-0001.mp3");
 
-    newMusic.loop = true;
+newMusic.loop = true;
 
-    newMusic.play();
+newMusic.play();
 
-    nextPage(6);
+nextPage(6);
 
-    launchFireworks();
+setTimeout(startTyping,500);
+
 }
-
 function moveNo() {
   let btn = document.getElementById("noBtn");
 
@@ -232,7 +242,48 @@ fw.remove();
 }
     
 }
- 
+ const letterMessage = `Happy Birthday My Love ❤️
+
+Thank you for being a part of my life.
+
+Every moment with you feels special.
+
+Your smile can make even my worst day better.
+No matter where life takes us,
+you will always be my favorite person.
+❤️
+
+I promise to always respect,
+support and care for you.
+
+Forever Yours,
+Ankit ❤️`;
+
+function startTyping(){
+
+let i = 0;
+
+document.getElementById("typedText").innerHTML="";
+
+let typing = setInterval(()=>{
+
+if(i < letterMessage.length){
+
+document.getElementById("typedText").innerHTML += letterMessage.charAt(i);
+
+i++;
+
+}else{
+
+clearInterval(typing);
+
+launchFireworks();
+
+}
+
+},50);
+
+     }
   function createHeart(){
 const heart=document.createElement("div");
 heart.classList.add("heart");
