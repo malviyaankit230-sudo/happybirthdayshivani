@@ -182,7 +182,14 @@ Forever Yours, Ankit 🫀
 <h2>💌 Dear Shivani,</h2>
 
 <p id="typedText"></p>
+<button id="finalBtn"
+onclick="showFinalMessage()"
+style="display:none;">
+❤️ One Last Surprise ❤️
+</button>
 
+<p id="finalMessage"></p>
+    
 </div>
 
 </div>
@@ -279,12 +286,23 @@ clearInterval(typing);
 
 launchFireworks();
 
+document.getElementById("finalBtn").style.display="inline-block";
+
 }
 
 },50);
 
      }
-  function createHeart(){
+ function showFinalMessage(){
+
+document.getElementById("finalMessage").innerHTML =
+
+"❤️ No matter what happens in life,<br><br>I will always be grateful that I met you.<br><br>Happy Birthday Shivani ❤️<br><br>Forever Yours,<br>Ankit ❤️";
+
+launchFireworks();
+
+ }
+    function createHeart(){
 const heart=document.createElement("div");
 heart.classList.add("heart");
 heart.innerHTML="❤️";
