@@ -117,7 +117,7 @@ May all your dreams come true,
 may you always stay happy,
 healthy and successful.
 </p>
-<button onclick="nextPage(5)">Final Message ❤️</button>
+<button onclick="nextPage(5)">Next Message ❤️</button>
 </div>
 
 <div class="page" id="page5">
@@ -129,6 +129,18 @@ but this little surprise carries all my love for you.
 <br><br>
 Forever Yours, Ankit 🫀
 </p>
+  Forever Yours, Ankit ❤️
+</p>
+
+<h2>Will You Stay With Me Forever? ❤️</h2>
+
+<button onclick="yesAnswer()">Yes ❤️</button>
+
+<button id="noBtn" onclick="moveNo()">No 😅</button>
+
+<p id="result"></p>
+
+</div>
 </div>
 
 </div>
@@ -141,7 +153,18 @@ page.classList.remove('active');
 });
 document.getElementById('page'+num).classList.add('active');
 }
+function yesAnswer() {
+  document.getElementById("result").innerHTML =
+  "Yay! ❤️ Forever Together ❤️";
+}
 
+function moveNo() {
+  let btn = document.getElementById("noBtn");
+
+  btn.style.position = "absolute";
+  btn.style.left = Math.random() * 80 + "vw";
+  btn.style.top = Math.random() * 80 + "vh";
+  }
 function createHeart(){
 const heart=document.createElement("div");
 heart.classList.add("heart");
